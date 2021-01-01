@@ -13,11 +13,11 @@ import warnings
 warnings.filterwarnings('ignore')
 
 ##### Load model
-filename = r'model\best_model.sav'
+filename = r'https://github.com/at-nl/hr-analytics-streamlit/blob/main/model/best_model.sav'
 best_clf = pickle.load(open(filename, 'rb'))
-encoder = pickle.load(open(r'model\encoder.sav', 'rb'))
-scaler_smote = pickle.load(open(r'model\scaler_smote.sav', 'rb'))
-pca_smote = pickle.load(open(r'model\pca_smote.sav', 'rb'))
+encoder = pickle.load(open(r'https://github.com/at-nl/hr-analytics-streamlit/blob/main/model/encoder.sav', 'rb'))
+scaler_smote = pickle.load(open(r'https://github.com/at-nl/hr-analytics-streamlit/blob/main/model/scaler_smote.sav', 'rb'))
+pca_smote = pickle.load(open(r'https://github.com/at-nl/hr-analytics-streamlit/blob/main/model/pca_smote.sav', 'rb'))
 colnames = ['city_city_1', 'city_city_10', 'city_city_100', 'city_city_101',
        'city_city_102', 'city_city_103', 'city_city_104', 'city_city_105',
        'city_city_106', 'city_city_107', 'city_city_109', 'city_city_11',
