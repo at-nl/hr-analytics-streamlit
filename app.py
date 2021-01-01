@@ -15,9 +15,9 @@ import warnings
 warnings.filterwarnings('ignore')
 
 ##### Load model
-encoder = pickle.load(open(r'model\encoder.sav', 'rb'))
-scaler_smote = pickle.load(open(r'model\scaler_smote.sav', 'rb'))
-pca_smote = pickle.load(open(r'model\pca_smote.sav', 'rb'))
+encoder = pickle.load(open(r'model\encoder.pkl', 'rb'))
+scaler_smote = pickle.load(open(r'model\scaler_smote.pkl', 'rb'))
+pca_smote = pickle.load(open(r'model\pca_smote.pkl', 'rb'))
 # best_clf = pickle.load(open(download_link, 'rb'))
 best_clf = bz2.BZ2File(r'model\best_model_compressed.pbz2', 'rb')
 best_clf = cPickle.load(best_clf)
