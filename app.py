@@ -17,7 +17,7 @@ warnings.filterwarnings('ignore')
 
 ##### Load model
 encoder = pickle.load(open('encoder.pkl', 'rb'))
-scaler_smote = pickle.load(open('scaler_smote.sav', 'rb'))
+scaler_smote = pickle.load(open('scaler_smote.pkl', 'rb'))
 pca_smote = pickle.load(open('pca_smote.pkl', 'rb'))
 best_clf = pickle.load(open('smote_lr.pkl', 'rb'))
 # best_clf = bz2.BZ2File(r'best_model_compressed.pbz2', 'rb')
@@ -257,7 +257,7 @@ st_features_enc = pd.DataFrame(
 )
 st_features_enc['city_development_index'] = st_features['city_development_index']
 # Scale training_hours
-st_features_scaled_hours_smote = scaler_smote.transform(np.array(st_features['training_hours']).reshape(-1, 1))
+st_features_scaled_hours_smote = scaler_smote.transform(np.array(st_features['training_hours'])) #.reshape(-1, 1)
 st_features_enc_smote = st_features_enc.copy()
 st_features_enc_smote['scaled_train_hours'] = list(st_features_scaled_hours_smote.flat)
 # PCA
