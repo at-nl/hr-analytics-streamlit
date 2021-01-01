@@ -7,6 +7,8 @@ This repository contains the source code for deploying a predictive Machine Lear
 
 The related [Google Colab notebook](https://colab.research.google.com/drive/1wgcFwe3gOGRgZP6OH8naS0NpIc1tVwSU?usp=sharing#scrollTo=LxzdsFwLVb9x) contains an extensive analysis of the data, preprocessing pipeline, model-building procedure, and Streamlit app development.
 
+In this deployment, a simpler, more lightweight Logistic Regression model is used instead of the best Random Forest model that I developed, for demonstration and memory purposes. Nonetheless, the "best" classifier is still included as a pickle file in the repository for reference. Note that the best classifier has been compressed using `bz2` and `_pickle `.
+
 ## Data
 The HR Analytics dataset is available [on Kaggle](https://www.kaggle.com/arashnic/hr-analytics-job-change-of-data-scientists). A company is interested in understanding the factors that may influence a data scientist's decision to stay with a company or switch jobs. This allows the company to "reduce the cost and time as well as the quality of training or planning the courses and categorization of candidates."
 
