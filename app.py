@@ -3,6 +3,8 @@ import pickle
 import re
 import pandas as pd
 import numpy as np
+import bz2
+import _pickle as cPickle
 from PIL import Image
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import MinMaxScaler
@@ -13,12 +15,13 @@ import warnings
 warnings.filterwarnings('ignore')
 
 ##### Load model
-download_link = 'https://drive.google.com/uc?export=download&id=1pcusg-8zQoQE5BtO3ndIKgF0c1yRyGrj'
-filename = r'https://drive.google.com/file/d/1pcusg-8zQoQE5BtO3ndIKgF0c1yRyGrj/view?usp=sharing'
-best_clf = pickle.load(open(download_link, 'rb'))
-encoder = pickle.load(open(r'https://github.com/at-nl/hr-analytics-streamlit/blob/main/model/encoder.sav', 'rb'))
-scaler_smote = pickle.load(open(r'https://github.com/at-nl/hr-analytics-streamlit/blob/main/model/scaler_smote.sav', 'rb'))
-pca_smote = pickle.load(open(r'https://github.com/at-nl/hr-analytics-streamlit/blob/main/model/pca_smote.sav', 'rb'))
+filename = r'model\best_model_compressed.pbz2'
+# best_clf = pickle.load(open(download_link, 'rb'))
+best_clf = bz2.BZ2File(filename, 'rb')
+best_clf = cPickle.load(best_clf)
+encoder = pickle.load(open(r'model\encoder.sav', 'rb'))
+scaler_smote = pickle.load(open(r'model\scaler_smote.sav', 'rb'))
+pca_smote = pickle.load(open(r'model\pca_smote.sav', 'rb'))
 colnames = ['city_city_1', 'city_city_10', 'city_city_100', 'city_city_101',
        'city_city_102', 'city_city_103', 'city_city_104', 'city_city_105',
        'city_city_106', 'city_city_107', 'city_city_109', 'city_city_11',
