@@ -257,7 +257,7 @@ st_features_enc = pd.DataFrame(
 )
 st_features_enc['city_development_index'] = st_features['city_development_index']
 # Scale training_hours
-st_features_scaled_hours_smote = scaler_smote.transform(np.array(st_features['training_hours'])) #.reshape(-1, 1)
+st_features_scaled_hours_smote = scaler_smote.transform(np.array(st_features['training_hours']).reshape(-1, 1))
 st_features_enc_smote = st_features_enc.copy()
 st_features_enc_smote['scaled_train_hours'] = list(st_features_scaled_hours_smote.flat)
 # PCA
