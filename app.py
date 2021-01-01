@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import pickle
 import re
@@ -15,11 +16,11 @@ import warnings
 warnings.filterwarnings('ignore')
 
 ##### Load model
-encoder = pickle.load(open(r'model\encoder.pkl', 'rb'))
-scaler_smote = pickle.load(open(r'model\scaler_smote.pkl', 'rb'))
-pca_smote = pickle.load(open(r'model\pca_smote.pkl', 'rb'))
+encoder = pickle.load(open(r'encoder.pkl', 'rb'))
+scaler_smote = pickle.load(open(r'scaler_smote.pkl', 'rb'))
+pca_smote = pickle.load(open(r'pca_smote.pkl', 'rb'))
 # best_clf = pickle.load(open(download_link, 'rb'))
-best_clf = bz2.BZ2File(r'model\best_model_compressed.pbz2', 'rb')
+best_clf = bz2.BZ2File(r'best_model_compressed.pbz2', 'rb')
 best_clf = cPickle.load(best_clf)
 colnames = ['city_city_1', 'city_city_10', 'city_city_100', 'city_city_101',
        'city_city_102', 'city_city_103', 'city_city_104', 'city_city_105',
