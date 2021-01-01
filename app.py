@@ -13,8 +13,9 @@ import warnings
 warnings.filterwarnings('ignore')
 
 ##### Load model
-filename = r'https://github.com/at-nl/hr-analytics-streamlit/blob/main/model/best_model.sav'
-best_clf = pickle.load(open(filename, 'rb'))
+download_link = 'https://drive.google.com/uc?export=download&id=1pcusg-8zQoQE5BtO3ndIKgF0c1yRyGrj'
+filename = r'https://drive.google.com/file/d/1pcusg-8zQoQE5BtO3ndIKgF0c1yRyGrj/view?usp=sharing'
+best_clf = pickle.load(open(download_link, 'rb'))
 encoder = pickle.load(open(r'https://github.com/at-nl/hr-analytics-streamlit/blob/main/model/encoder.sav', 'rb'))
 scaler_smote = pickle.load(open(r'https://github.com/at-nl/hr-analytics-streamlit/blob/main/model/scaler_smote.sav', 'rb'))
 pca_smote = pickle.load(open(r'https://github.com/at-nl/hr-analytics-streamlit/blob/main/model/pca_smote.sav', 'rb'))
