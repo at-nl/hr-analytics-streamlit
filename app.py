@@ -87,7 +87,7 @@ PAGE_CONFIG = {"page_title":"StColab.io","page_icon":":smiley:","layout":"center
 st.set_page_config(**PAGE_CONFIG)
 st.set_option('deprecation.showImageFormat', False)
 st.header("Employee Trajectory: Switch job vs Stay at current company")
-image = Image.open(r'content\employees.jpg')
+image = Image.open(r'employees.jpg')
 st.image(image, use_column_width = True, format = 'JPG')
 st.sidebar.write("**Please insert values to determine whether an employee will stay at their current company or switch jobs.**")
 
