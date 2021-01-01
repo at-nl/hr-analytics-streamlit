@@ -15,13 +15,12 @@ import warnings
 warnings.filterwarnings('ignore')
 
 ##### Load model
-filename = r'https://github.com/at-nl/hr-analytics-streamlit/blob/main/model/best_model_compressed.pbz2'
+encoder = pickle.load(open(r'model\encoder.sav', 'rb'))
+scaler_smote = pickle.load(open(r'model\scaler_smote.sav', 'rb'))
+pca_smote = pickle.load(open(r'model\pca_smote.sav', 'rb'))
 # best_clf = pickle.load(open(download_link, 'rb'))
-best_clf = bz2.BZ2File(filename, 'rb')
+best_clf = bz2.BZ2File(r'model\best_model_compressed.pbz2', 'rb')
 best_clf = cPickle.load(best_clf)
-encoder = pickle.load(open(r'https://github.com/at-nl/hr-analytics-streamlit/blob/main/model/encoder.sav', 'rb'))
-scaler_smote = pickle.load(open(r'https://github.com/at-nl/hr-analytics-streamlit/blob/main/model/scaler_smote.sav', 'rb'))
-pca_smote = pickle.load(open(r'https://github.com/at-nl/hr-analytics-streamlit/blob/main/model/pca_smote.sav', 'rb'))
 colnames = ['city_city_1', 'city_city_10', 'city_city_100', 'city_city_101',
        'city_city_102', 'city_city_103', 'city_city_104', 'city_city_105',
        'city_city_106', 'city_city_107', 'city_city_109', 'city_city_11',
@@ -87,7 +86,7 @@ PAGE_CONFIG = {"page_title":"StColab.io","page_icon":":smiley:","layout":"center
 st.set_page_config(**PAGE_CONFIG)
 st.set_option('deprecation.showImageFormat', False)
 st.header("Employee Trajectory: Switch job vs Stay at current company")
-image = Image.open(r'/content/employees.jpg')
+image = Image.open(r'content\employees.jpg')
 st.image(image, use_column_width = True, format = 'JPG')
 st.sidebar.write("**Please insert values to determine whether an employee will stay at their current company or switch jobs.**")
 
